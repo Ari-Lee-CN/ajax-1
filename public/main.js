@@ -85,7 +85,7 @@ getXML.onclick = () =>{
     request.open('GET',"/4.xml");
     request.onreadystatechange = () =>{
         console.log(request.readyState);
-        if(request.readyState === '4' && request.status ===200) {
+        if(request.readyState === 4 && request.status ===200) {
             console.log(request.responseXML);
             const dom = request.responseXML;
             const text = dom.getElementsByTagName('warning')[0].textContent
@@ -98,7 +98,7 @@ getJSON.onclick = () =>{
     const request = new XMLHttpRequest();
     request.open('GET',"/5.JSON");
     request.onreadystatechange = () =>{
-        if(request.readyState === '4'){
+        if(request.readyState === 4){
             if(request.status >= 200 && request < 300){
                  //创建style标签
             const object = JSON.parse(request.response);
